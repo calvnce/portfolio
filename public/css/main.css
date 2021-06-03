@@ -64,28 +64,33 @@ a {
   position: relative;
   width: 100%;
   height: 96px;
-  top: 161px;
+  top: 168px;
   font-family: 'Inter', sans-serif;
-  font-style: normal;
   font-weight: 800;
   font-size: 48px;
   line-height: 60px;
-  text-align: center;
   letter-spacing: 0.37px;
   color: #172b4d;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.headline h2 {
+  color: #36b37e;
+  margin-bottom: 20px;
 }
 
 .headline p {
-  color: #36b37e;
+  font-size: 18px;
+  color: #172b4d;
+  line-height: 30px;
+  align-items: center;
 }
 
-.headline-description {
-  width: 80%;
-  height: 96px;
-  font-size: 18px;
+.headline > h1,
+.headline > h2,
+.headline > p {
   text-align: center;
-  color: #172b4d;
-  margin: 222px auto 0 auto;
-  line-height: 30px;
+  padding: 5px;
 }
