@@ -1,3 +1,4 @@
 # config files
 .settings/
 node_modules/
+package*
