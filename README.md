@@ -1,7 +1,7 @@
 # Project Name
  MY PORTFOLOIO
 
-This project creates a WEB-BASED MOBILE-ENABLED based persional portfolio.
+This project creates a web-based and mobile enabled persional portfolio.
 
 
 ![screenshot](public/img/headline-demo.png)
