@@ -4,7 +4,7 @@
 This project creates a WEB-BASED MOBILE-ENABLED based persional portfolio.
 
 
-![screenshot](public/img/demo.png)
+![screenshot](public/img/headline-demo.png)
 
 
 ## Built With
