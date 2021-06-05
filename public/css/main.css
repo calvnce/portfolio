@@ -1,0 +1,130 @@
+/* Project: Personal Portfolio
+   Author: Calvince
+   Date: 6/02/2021
+*/
+
+/* Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* General body rules */
+
+body {
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #28352f;
+}
+
+/* Top Menu */
+
+#menubar {
+  width: 365px;
+  height: 50px;
+  position: relative;
+  top: 15px;
+  margin: auto;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.logo-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  padding: 10px 20px 5px 0;
+}
+
+.hamburger > span {
+  position: absolute;
+  border-radius: 2px;
+  border: 1px solid;
+  width: 100%;
+}
+
+.hamburger span:nth-child(1) {
+  top: 5px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 12px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 19px;
+}
+
+.headine-wraper {
+  width: 375px;
+  height: 650px;
+  background-image: url("../img/header-back.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px auto;
+}
+
+.headline {
+  position: relative;
+  top: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  color: #172b4d;
+}
+
+.headline h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 58px;
+  color: #172b4d;
+  letter-spacing: 0.35px;
+}
+
+.headline span {
+  color: #36b37e;
+}
+
+.headline p {
+  color: #172b4d;
+  line-height: 30px;
+  margin: 30px 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+}
+
+.social {
+  width: 120px;
+  min-height: 25px;
+  position: relative;
+  top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.social span {
+  color: #505f79;
+  font-size: 35px;
+  font-weight: 900;
+}
