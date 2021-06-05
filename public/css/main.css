@@ -19,6 +19,10 @@ a {
   color: #28352f;
 }
 
+ul {
+  text-decoration: none;
+}
+
 /* Top Menu */
 
 #menubar {
@@ -227,7 +231,7 @@ a {
   justify-content: space-between;
 }
 
-.card > .project-info .skills > div {
+.card > .project-info .skills > li {
   background: #ebf0ee;
   height: 30px;
   border-radius: 4px;
@@ -371,7 +375,7 @@ a {
   flex-wrap: wrap;
 }
 
-.about-wraper > .simple-card > .outline-wrapper > .items > div {
+.about-wraper > .simple-card > .outline-wrapper > .items > li {
   background: #fff;
   height: 40px;
   border-radius: 8px;
