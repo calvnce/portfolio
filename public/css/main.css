@@ -168,7 +168,7 @@ a {
 
 .works-container > .header {
   width: 100%;
-  padding: 35px auto;
+  padding: 35px 0;
   text-align: center;
 }
 
@@ -182,7 +182,7 @@ a {
 
 .card {
   width: 327px;
-  margin:15px auto;
+  margin: 15px auto;
   border: 1px solid #d0d9d4;
   border-radius: 8px;
   display: grid;
@@ -191,7 +191,7 @@ a {
 }
 
 .card > .project-image {
-    background: #eef0ee;
+  background: #eef0ee;
 }
 
 .card > .project-info {
@@ -205,8 +205,9 @@ a {
   text-align: center;
   align-items: center;
 }
-.card > .project-info > .project-name{
-  font-family: 'Inter' sans-serif;
+
+.card > .project-info > .project-name {
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -221,8 +222,7 @@ a {
   align-items: center;
   padding: 8px 12px;
   flex: none;
-  flex-grow: 0;
-  margin: 0px 8px;
+  margin: 0 8px;
   width: 99%;
   justify-content: space-between;
 }
@@ -245,12 +245,13 @@ a {
   color: #3a4a42;
 }
 
-.card > .project-info > .project-button{
+.card > .project-info > .project-button {
   width: 148px;
   height: 58px;
   margin: 0 auto 25px auto;
 }
-.card > .project-info > .project-button > button{
+
+.card > .project-info > .project-button > button {
   border-radius: 8px;
   letter-spacing: 0.03em;
   color: #fff;
