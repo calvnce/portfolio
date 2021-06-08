@@ -4,10 +4,11 @@
 This project creates a web-based and mobile enabled persional portfolio.
 
 
-![screenshot](public/img/headline-demo.png)
+![screenshot](public/img/nav.png)
 ![screenshot](public/img/recent-works.png)
 ![screenshot](public/img/about.png)
 ![screenshot](public/img/skills.png)
+![screenshot](public/img/contact.png)
 
 ## Built With
 
