@@ -32,7 +32,8 @@ footer {
   margin: auto;
 }
 
-button:hover {
+button:hover,
+#get-in-touch-button:hover {
   background-color: rgb(41, 29, 105);
   cursor: pointer;
   color: #36b37e;
