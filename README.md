@@ -1,14 +1,9 @@
 # Project Name
- MY PORTFOLOIO
 
-This project creates a web-based and mobile enabled persional portfolio.
+This is project creates resume. It contain all the projects I hav worked on as a individual developer and as a collaborator and contrubutor
 
 
-![screenshot](public/img/nav.png)
-![screenshot](public/img/recent-works.png)
-![screenshot](public/img/about.png)
-![screenshot](public/img/skills.png)
-![screenshot](public/img/contact.png)
+![screenshot](src/public/img/snap.png)
 
 ## Built With
 
@@ -51,4 +46,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](LICENSE) licensed.
-

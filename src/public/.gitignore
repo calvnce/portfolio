@@ -1,0 +1,9 @@
+# config files
+.settings/
+node_modules/
+package*
+
+# os extensions
+*.mac
+*.os
+*.vscode
