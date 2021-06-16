@@ -275,7 +275,7 @@ nav {
   line-height: 24px;
   text-align: center;
   letter-spacing: 0.03em;
-  background: #1d5d44;
+  background: #1a694b;
   border-radius: 8px;
   font-family: 'Vollkorn', serif;
 }
@@ -323,7 +323,7 @@ nav {
 .simple-card > .card-details > ul > li {
   float: none;
   background-color: #fff;
-  color: #1d5d44;
+  color: #1a694b;
   padding: 8px 18px;
 }
 
@@ -422,7 +422,7 @@ label {
 .contact-button {
   width: 150px;
   height: 26px;
-  background: #1d5d44;
+  background: #1a694b;
 }
 
 .contact-cover-right {
@@ -453,7 +453,7 @@ label {
 
 hr {
   width: 100%;
-  background: #dfe1e6;
+  background: #d5d7db;
   margin: 0 auto;
 }
 
