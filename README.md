@@ -1,4 +1,4 @@
-# Project Name
+# Portfolio
 
 This is project creates resume. It contain all the projects I hav worked on as a individual developer and as a collaborator and contrubutor
 
