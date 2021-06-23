@@ -1,0 +1,322 @@
+@media screen and (min-width: 280px) {
+  .card {
+    width: 260px;
+
+    &-details > ul > li {
+      padding: 6px;
+      font-size: 9px;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .headline-bg-cover {
+    height: 710px;
+  }
+
+  .top {
+    padding-top: 0;
+  }
+
+  .action {
+    margin-top: 105px;
+  }
+
+  .card {
+    width: 300px;
+
+    &-details > ul > li {
+      padding: 6px 8px;
+      font-size: 11px;
+    }
+  }
+
+  .contact-button {
+    margin-left: 6px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .card {
+    width: 350px;
+
+    &-details > ul > li {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .card {
+    width: 460px;
+
+    &-details > ul > li {
+      padding: 6px 20px;
+      font-size: 12px;
+    }
+  }
+
+  .simple-card {
+    grid-template-rows: 190px 240px;
+
+    .card-details {
+      ul > li {
+        padding: 8px 21px;
+        font-size: 15px;
+      }
+    }
+
+    .card-image > img {
+      margin-top: 55px;
+      width: 155px;
+    }
+  }
+
+  .contact > .text {
+    width: 70%;
+    margin: auto;
+  }
+
+  .contact-button {
+    margin-left: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .headline-bg-cover {
+    height: 920px;
+  }
+
+  .top {
+    padding-top: 50px;
+  }
+
+  .action {
+    margin-top: 25px;
+    width: 80px;
+    height: 80px;
+
+    span {
+      width: inherit;
+      height: inherit;
+      border-radius: 50%;
+
+      .fas {
+        font-size: 25px;
+      }
+    }
+  }
+
+  .row > .social-icons {
+    width: 400px;
+    margin-top: 50px;
+  }
+
+  .contact {
+    margin-top: 108px;
+  }
+
+  .card {
+    width: 560px;
+    grid-template-rows: 302px 352px;
+
+    &-details > ul > li {
+      padding: 6px 26px;
+      font-size: 16px;
+    }
+
+    &-details {
+      h3 {
+        font-size: 44px;
+      }
+    }
+  }
+
+  .card-btn {
+    width: 170px;
+    height: 50px;
+  }
+
+  .simple-card {
+    grid-template-rows: 200px 260px;
+
+    .card-details {
+      ul > li {
+        padding: 8px 32px;
+        font-size: 18px;
+      }
+    }
+
+    .card-image > img {
+      margin-top: 55px;
+      width: 155px;
+    }
+  }
+
+  .contact-button {
+    margin-left: 12px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .mobile-menu {
+    display: none;
+  }
+
+  .desktop-menu {
+    display: flex;
+    transform: translaty(1px);
+    background-color: lighten($color: $secondary-color, $amount: 100%);
+    position: fixed;
+    top: 0;
+    left: 5px;
+    width: 100%;
+    justify-content: center;
+    height: 55px;
+    align-items: center;
+
+    &-item {
+      margin: 0 25px;
+      padding: 20px 0;
+    }
+  }
+
+  footer {
+    .social-icons {
+      width: 45%;
+
+      li > a > .fab {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cards {
+    flex-flow: row wrap;
+  }
+
+  .card {
+    width: 305px;
+
+    &-details > ul > li {
+      padding: 6px 10px;
+      font-size: 10px;
+    }
+
+    &-details {
+      h3 {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .card-btn {
+    width: 135px;
+    height: 40px;
+  }
+
+  .simple-card {
+    grid-template-rows: 140px 200px;
+
+    .card-details {
+      ul > li {
+        padding: 8px 14px;
+        font-size: 10px;
+      }
+    }
+
+    .card-image > img {
+      margin-top: 15px;
+      width: 125px;
+    }
+  }
+
+  .contact-button {
+    margin-left: 8px;
+  }
+
+  .contact {
+    grid-template-columns: 37% 60%;
+    grid-template-rows: 302px;
+
+    .text > h4 {
+      text-align: left;
+      margin-left: 15px;
+    }
+  }
+
+  footer {
+    .social-icons {
+      width: 40%;
+
+      li > a > .fab {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main,
+  footer {
+    width: 1200px;
+    margin: auto;
+  }
+
+  footer {
+    margin-top: -18px;
+
+    .social-icons {
+      width: 60%;
+
+      li > a > .fab {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .desktop-menu {
+    position: relative;
+    margin: 0;
+    left: 0;
+  }
+
+  .row > h1 {
+    font-size: 54px;
+  }
+
+  .content > .row > h1 {
+    font-size: 46px;
+  }
+
+  .content > .row > p {
+    font-size: 26px;
+    line-height: 38px;
+  }
+
+  .card {
+    width: 360px;
+
+    &-details > ul > li {
+      padding: 6px 11px;
+      font-size: 13px;
+    }
+
+    &-details {
+      h3 {
+        font-size: 36px;
+      }
+    }
+  }
+
+  .contact {
+    grid-template-columns: 38% 60%;
+  }
+
+  .contact > .text {
+    width: 90%;
+  }
+}

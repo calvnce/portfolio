@@ -1,4 +1,4 @@
-# config files
-.settings/
+# .gitignore
 node_modules/
-package*
+
+*.vscode

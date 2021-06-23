@@ -1,0 +1,51 @@
+$primary-color: #36b37f;
+$secondary-color: #dfe1e6;
+$color: #172b4d;
+$themes: (
+  'light-grey': #e5e5e5,
+  'dark': #172b4d
+);
+$font-weights: (
+  'regular': 400,
+  'medium': 600,
+  'bold': 800
+);
+$font-families: (
+  'poppins': '"Poppins", sans-serif',
+  'vol': '"Vollkorn", sans-serif',
+  'inter': '"Inter", sans-serif',
+  'roboto': '"Roboto", sans-serif'
+);
+
+@mixin tranisition-all {
+  transition: all 1s ease-in-out;
+}
+
+@mixin flex-items {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+@function get-font-weight($weight) {
+  @return map-get($map: $font-weights, $key: $weight);
+}
+
+@function get-font-family($family) {
+  @return map-get($map: $font-families, $key: $family);
+}
+
+@function get-theme($theme) {
+  @return map-get($map: $themes, $key: $theme);
+}
+
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+
+  @return mix($inverse, $color, $amount);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@600&display=swap');
