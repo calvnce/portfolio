@@ -1,4 +1,11 @@
 @media screen and (min-width: 280px) {
+  .desktop-menu {
+    &-item {
+      position: relative;
+      left: -80px;
+    }
+  }
+
   .card {
     width: 260px;
 
@@ -37,6 +44,12 @@
 }
 
 @media screen and (min-width: 375px) {
+  .desktop-menu {
+    &-item {
+      left: -100px;
+    }
+  }
+
   .card {
     width: 350px;
 
@@ -48,6 +61,12 @@
 }
 
 @media screen and (min-width: 540px) {
+  .desktop-menu {
+    &-item {
+      left: -150px;
+    }
+  }
+
   .card {
     width: 460px;
 
@@ -84,6 +103,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  .desktop-menu {
+    &-item {
+      left: -200px;
+    }
+  }
+
   .headline-bg-cover {
     height: 920px;
   }
@@ -94,8 +119,8 @@
 
   .action {
     margin-top: 25px;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 
     span {
       width: inherit;
@@ -177,6 +202,7 @@
     align-items: center;
 
     &-item {
+      position: static;
       margin: 0 25px;
       padding: 20px 0;
     }
