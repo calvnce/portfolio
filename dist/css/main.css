@@ -43,8 +43,8 @@ a:hover {
 }
 
 a.active {
-  color: #36b37f;
-  font-size: 28px;
+  color: #dfe1e6;
+  font-size: 18px;
 }
 
 main {
@@ -79,7 +79,7 @@ main {
 
 .mobile-menu a {
   width: 20%;
-  color: #1e6547;
+  color: inherit;
 }
 
 .mobile-menu-button {
@@ -180,11 +180,15 @@ main {
 .desktop-menu-item:hover {
   background-color: white;
   color: #36b37f;
-  border-bottom: 2px solid #36b37f;
   font-weight: 800;
   font-family: "Inter", sans-serif;
+  border-bottom: 2px solid #36b37f;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+}
+
+.desktop-menu-item.active {
+  color: #1e6547;
 }
 
 .desktop-menu.open {
@@ -192,17 +196,18 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  width: 99%;
-  height: 80vh;
+  width: 100%;
+  height: 99vh;
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
-  background-color: #f0f1f3;
+  background-color: white;
   margin: 0 auto;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+  border-bottom: 2px solid #dfe1e6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -216,13 +221,13 @@ main {
 
 .desktop-menu.open .desktop-menu-item {
   margin: 15px auto;
-  padding: 15px 0;
+  padding: 10px 0;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 
 .desktop-menu.open .desktop-menu-item a {
-  font-size: 15px;
+  font-size: 28px;
   color: #172b4d;
 }
 
@@ -677,6 +682,10 @@ footer {
 }
 
 @media screen and (min-width: 280px) {
+  .desktop-menu-item {
+    position: relative;
+    left: -80px;
+  }
   .card {
     width: 260px;
   }
@@ -709,6 +718,9 @@ footer {
 }
 
 @media screen and (min-width: 375px) {
+  .desktop-menu-item {
+    left: -100px;
+  }
   .card {
     width: 350px;
   }
@@ -719,6 +731,9 @@ footer {
 }
 
 @media screen and (min-width: 540px) {
+  .desktop-menu-item {
+    left: -150px;
+  }
   .card {
     width: 460px;
   }
@@ -748,6 +763,9 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  .desktop-menu-item {
+    left: -200px;
+  }
   .headline-bg-cover {
     height: 920px;
   }
@@ -756,8 +774,8 @@ footer {
   }
   .action {
     margin-top: 25px;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
   .action span {
     width: inherit;
@@ -831,6 +849,7 @@ footer {
             align-items: center;
   }
   .desktop-menu-item {
+    position: static;
     margin: 0 25px;
     padding: 20px 0;
   }
