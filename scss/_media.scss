@@ -3,6 +3,35 @@
     &-item {
       position: relative;
       left: -80px;
+      top: 50px;
+    }
+  }
+
+  .top {
+    padding-top: 0;
+  }
+
+  .headline-bg-cover {
+    background-image: initial;
+  }
+
+  .mobile-cover {
+    width: 100%;
+    background-image: url('../img/header-illsutration-mobile.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 550px;
+  }
+
+  .content > .row {
+    h2 {
+      width: 60vw;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 26px;
     }
   }
 
@@ -17,16 +46,18 @@
 }
 
 @media screen and (min-width: 320px) {
-  .headline-bg-cover {
-    height: 710px;
-  }
-
-  .top {
-    padding-top: 0;
+  .desktop-menu {
+    &-item {
+      left: -100px;
+    }
   }
 
   .action {
-    margin-top: 105px;
+    margin: 25px auto;
+  }
+
+  .top {
+    padding-top: 10px;
   }
 
   .card {
@@ -46,12 +77,36 @@
 @media screen and (min-width: 375px) {
   .desktop-menu {
     &-item {
-      left: -100px;
+      left: -140px;
     }
+  }
+
+  .mobile-cover {
+    height: 660px;
+  }
+
+  .content > .row {
+    width: 100%;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 36px;
+      margin-top: 15px;
+    }
+
+    p {
+      font-size: 17px;
+      margin-top: 25px;
+    }
+  }
+
+  .action {
+    margin: 25px auto;
   }
 
   .card {
     width: 350px;
+    margin: 10px auto;
 
     &-details > ul > li {
       padding: 6px 10px;
@@ -63,7 +118,23 @@
 @media screen and (min-width: 540px) {
   .desktop-menu {
     &-item {
-      left: -150px;
+      left: -220px;
+    }
+  }
+
+  .mobile-cover {
+    height: 920px;
+  }
+
+  .content > .row {
+    h1 {
+      font-size: 43px;
+      margin-top: 105px;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 36px;
     }
   }
 
@@ -109,12 +180,19 @@
     }
   }
 
-  .headline-bg-cover {
-    height: 920px;
-  }
-
   .top {
     padding-top: 50px;
+  }
+
+  .content > .row {
+    h1 {
+      font-size: 43px;
+      margin-top: 125px;
+    }
+
+    p {
+      font-size: 21px;
+    }
   }
 
   .action {
@@ -185,8 +263,24 @@
 }
 
 @media screen and (min-width: 992px) {
-  .mobile-menu {
+  .mobile-menu,
+  .desktop-mobile-menu-item {
     display: none;
+  }
+
+  .content > .row {
+    h1,
+    p {
+      width: 60%;
+    }
+  }
+
+  .mobile-cover {
+    background-image: initial;
+  }
+
+  .headline-bg-cover {
+    background-image: url('../img/Header-llustration-desktop.png');
   }
 
   .desktop-menu {

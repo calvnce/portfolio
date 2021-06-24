@@ -61,6 +61,20 @@ main {
   height: 1020px;
 }
 
+.mobile-menu-button-item, .mobile-menu-button-item::before, .mobile-menu-button-item::after, .mobile-menu-button-item.open::before, .mobile-menu-button-item.open::after, .desktop-menu.open .desktop-mobile-menu-item .mobile-menu-button-item::before, .desktop-menu.open .desktop-mobile-menu-item .mobile-menu-button-item::after {
+  background-color: #67798e;
+}
+
+.mobile-menu-button-item.open::before, .desktop-menu.open .desktop-mobile-menu-item .mobile-menu-button-item::before {
+  -webkit-transform: rotate(45deg) translateY(10px);
+          transform: rotate(45deg) translateY(10px);
+}
+
+.mobile-menu-button-item.open::after, .desktop-menu.open .desktop-mobile-menu-item .mobile-menu-button-item::after {
+  -webkit-transform: rotate(-45deg) translateY(6px);
+          transform: rotate(-45deg) translateY(6px);
+}
+
 .mobile-menu {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -103,10 +117,9 @@ main {
 
 .mobile-menu-button-item {
   position: absolute;
-  width: 40px;
-  height: 4px;
+  width: 30px;
+  height: 3px;
   margin: 0 auto;
-  background-color: #234174;
   top: -2px;
   left: 65%;
   -webkit-transition: all 1s ease-in-out;
@@ -120,7 +133,6 @@ main {
   left: 0;
   height: inherit;
   width: inherit;
-  background-color: #234174;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
@@ -132,7 +144,6 @@ main {
   left: 0;
   height: inherit;
   width: inherit;
-  background-color: #234174;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
@@ -143,14 +154,7 @@ main {
   background-color: transparent;
 }
 
-.mobile-menu-button-item.open::before {
-  -webkit-transform: rotate(45deg) translateY(8px);
-          transform: rotate(45deg) translateY(8px);
-}
-
 .mobile-menu-button-item.open::after {
-  -webkit-transform: rotate(-45deg) translateY(8px);
-          transform: rotate(-45deg) translateY(8px);
   top: -5px;
   left: -11px;
 }
@@ -208,6 +212,8 @@ main {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   border-bottom: 2px solid #dfe1e6;
+  position: relative;
+  top: -50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -221,14 +227,31 @@ main {
 
 .desktop-menu.open .desktop-menu-item {
   margin: 15px auto;
-  padding: 10px 0;
+  padding: 2px 0;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 
 .desktop-menu.open .desktop-menu-item a {
-  font-size: 28px;
+  font-size: 21px;
   color: #172b4d;
+}
+
+.desktop-menu.open .desktop-mobile-menu-item {
+  position: fixed;
+  right: 75px;
+  top: 25px;
+}
+
+.desktop-menu.open .desktop-mobile-menu-item .mobile-menu-button-item {
+  -webkit-transform: rotate(720deg);
+          transform: rotate(720deg);
+  background-color: transparent;
+}
+
+.desktop-menu.open .desktop-mobile-menu-item .mobile-menu-button-item::after {
+  top: -5px;
+  left: -11px;
 }
 
 .content .row h1, .content .row h2 {
@@ -308,10 +331,10 @@ main {
 
 .content .row h1,
 .content .row p {
-  width: 70%;
+  width: 96%;
   margin: 0 auto;
   font-style: normal;
-  color: #525969;
+  color: #353a44;
   text-align: center;
 }
 
@@ -321,7 +344,7 @@ main {
 
 .content .row p {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 28px;
   margin-top: 15px;
 }
@@ -329,6 +352,14 @@ main {
 .content .row h2 {
   font-family: "Poppins", sans-serif;
   font-size: 36px;
+}
+
+.content .row .underline {
+  width: 30%;
+  margin: 10px auto;
+  background-color: #36b37f;
+  height: 4px;
+  border-radius: 4px;
 }
 
 .social-icons {
@@ -685,6 +716,28 @@ footer {
   .desktop-menu-item {
     position: relative;
     left: -80px;
+    top: 50px;
+  }
+  .top {
+    padding-top: 0;
+  }
+  .headline-bg-cover {
+    background-image: initial;
+  }
+  .mobile-cover {
+    width: 100%;
+    background-image: url("../img/header-illsutration-mobile.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 550px;
+  }
+  .content > .row h2 {
+    width: 60vw;
+  }
+  .content > .row p {
+    font-size: 14px;
+    line-height: 26px;
   }
   .card {
     width: 260px;
@@ -696,14 +749,14 @@ footer {
 }
 
 @media screen and (min-width: 320px) {
-  .headline-bg-cover {
-    height: 710px;
-  }
-  .top {
-    padding-top: 0;
+  .desktop-menu-item {
+    left: -100px;
   }
   .action {
-    margin-top: 105px;
+    margin: 25px auto;
+  }
+  .top {
+    padding-top: 10px;
   }
   .card {
     width: 300px;
@@ -719,10 +772,29 @@ footer {
 
 @media screen and (min-width: 375px) {
   .desktop-menu-item {
-    left: -100px;
+    left: -140px;
+  }
+  .mobile-cover {
+    height: 660px;
+  }
+  .content > .row {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .content > .row h1 {
+    font-size: 36px;
+    margin-top: 15px;
+  }
+  .content > .row p {
+    font-size: 17px;
+    margin-top: 25px;
+  }
+  .action {
+    margin: 25px auto;
   }
   .card {
     width: 350px;
+    margin: 10px auto;
   }
   .card-details > ul > li {
     padding: 6px 10px;
@@ -732,7 +804,18 @@ footer {
 
 @media screen and (min-width: 540px) {
   .desktop-menu-item {
-    left: -150px;
+    left: -220px;
+  }
+  .mobile-cover {
+    height: 920px;
+  }
+  .content > .row h1 {
+    font-size: 43px;
+    margin-top: 105px;
+  }
+  .content > .row p {
+    font-size: 19px;
+    line-height: 36px;
   }
   .card {
     width: 460px;
@@ -766,11 +849,15 @@ footer {
   .desktop-menu-item {
     left: -200px;
   }
-  .headline-bg-cover {
-    height: 920px;
-  }
   .top {
     padding-top: 50px;
+  }
+  .content > .row h1 {
+    font-size: 43px;
+    margin-top: 125px;
+  }
+  .content > .row p {
+    font-size: 21px;
   }
   .action {
     margin-top: 25px;
@@ -826,8 +913,19 @@ footer {
 }
 
 @media screen and (min-width: 992px) {
-  .mobile-menu {
+  .mobile-menu,
+  .desktop-mobile-menu-item {
     display: none;
+  }
+  .content > .row h1,
+  .content > .row p {
+    width: 60%;
+  }
+  .mobile-cover {
+    background-image: initial;
+  }
+  .headline-bg-cover {
+    background-image: url("../img/Header-llustration-desktop.png");
   }
   .desktop-menu {
     display: -webkit-box;
