@@ -53,6 +53,18 @@ main {
   height: 1020px;
 }
 
+%x-color {
+  background-color: $alternative-color;
+}
+
+%bread-crumb-before {
+  transform: rotate(45deg) translateY(10px);
+}
+
+%bread-crumb-after {
+  transform: rotate(-45deg) translateY(6px);
+}
+
 .mobile-menu {
   justify-content: center;
   width: 99%;
@@ -76,12 +88,13 @@ main {
 
     &-item {
       position: absolute;
-      width: 40px;
-      height: 4px;
+      width: 30px;
+      height: 3px;
       margin: 0 auto;
-      background-color: lighten($color: $color, $amount: 10%);
       top: -2px;
       left: 65%;
+
+      @extend %x-color;
 
       @include tranisition-all;
 
@@ -92,7 +105,8 @@ main {
         left: 0;
         height: inherit;
         width: inherit;
-        background-color: lighten($color: $color, $amount: 10%);
+
+        @extend %x-color;
 
         @include tranisition-all;
       }
@@ -104,7 +118,8 @@ main {
         left: 0;
         height: inherit;
         width: inherit;
-        background-color: lighten($color: $color, $amount: 10%);
+
+        @extend %x-color;
 
         @include tranisition-all;
       }
@@ -114,13 +129,16 @@ main {
         background-color: transparent;
 
         &::before {
-          transform: rotate(45deg) translateY(8px);
+          @extend %bread-crumb-before;
+          @extend %x-color;
         }
 
         &::after {
-          transform: rotate(-45deg) translateY(8px);
           top: -5px;
           left: -11px;
+
+          @extend %bread-crumb-after;
+          @extend %x-color;
         }
       }
 
@@ -165,7 +183,7 @@ main {
   &.open {
     flex-flow: column wrap;
     width: 100%;
-    height: 99vh;
+    height: 90vh;
     border-bottom-left-radius: 18px;
     border-bottom-right-radius: 18px;
     background-color: lighten($color: $secondary-color, $amount: 25%);
@@ -173,19 +191,45 @@ main {
     justify-content: flex-start;
     transform: translateY(0);
     border-bottom: 2px solid $secondary-color;
+    position: relative;
+    top: -50px;
 
     @include flex-items;
     @include tranisition-all;
 
     .desktop-menu-item {
       margin: 15px auto;
-      padding: 10px 0;
+      padding: 2px 0;
 
       @include tranisition-all;
 
       a {
-        font-size: 28px;
+        font-size: 21px;
         color: $color;
+      }
+    }
+
+    .desktop-mobile-menu-item {
+      position: fixed;
+      right: 75px;
+      top: 25px;
+
+      .mobile-menu-button-item {
+        transform: rotate(720deg);
+        background-color: transparent;
+
+        &::before {
+          @extend %bread-crumb-before;
+          @extend %x-color;
+        }
+
+        &::after {
+          top: -5px;
+          left: -11px;
+
+          @extend %bread-crumb-after;
+          @extend %x-color;
+        }
       }
     }
   }
@@ -245,10 +289,10 @@ main {
 
     h1,
     p {
-      width: 70%;
+      width: 96%;
       margin: 0 auto;
       font-style: normal;
-      color: darken($color: $secondary-color, $amount: 52%);
+      color: darken($color: $secondary-color, $amount: 65%);
       text-align: center;
     }
 
@@ -262,7 +306,7 @@ main {
 
     p {
       font-weight: get-font-weight('regular');
-      font-size: 20px;
+      font-size: 18px;
       line-height: 28px;
       margin-top: 15px;
     }
@@ -272,6 +316,14 @@ main {
       font-size: 36px;
 
       @extend %h;
+    }
+
+    .underline {
+      width: 30%;
+      margin: 10px auto;
+      background-color: $primary-color;
+      height: 4px;
+      border-radius: 4px;
     }
   }
 }
