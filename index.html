@@ -92,56 +92,7 @@
     <div class="row">
       <h2>My Recent Works</h2>
       <span class="underline"></span>
-      <div class="cards">
-        <div class="card">
-          <div class="card-image">
-            <img alt="Image" src="./dist/img/blank.png" />
-          </div>
-          <div class="card-details">
-            <h3>Multi-Post Stories Gain+Glory</h3>
-            <ul>
-              <li>Ruby on rails</li>
-              <li>css</li>
-              <li>JavaScript</li>
-              <li>html</li>
-            </ul>
-            <button type="submit" class="card-btn">See Project</button>
-          </div>
-        </div>
-        <!-- 2nd card-->
-        <div class="card">
-          <div class="card-image">
-            <img alt="Image" src="./dist/img/blank.png" />
-          </div>
-          <div class="card-details">
-            <h3>Multi-Post Stories Gain+Glory</h3>
-            <ul>
-              <li>Ruby on rails</li>
-              <li>css</li>
-              <li>JavaScript</li>
-              <li>html</li>
-            </ul>
-            <button type="submit" class="card-btn">See Project</button>
-          </div>
-        </div>
-        <!-- 3rd card-->
-        <div class="card">
-          <div class="card-image">
-            <img alt="Image" src="./dist/img/blank.png" />
-          </div>
-          <div class="card-details">
-            <h3>Multi-Post Stories Gain+Glory</h3>
-            <ul>
-              <li>Ruby on rails</li>
-              <li>css</li>
-              <li>JavaScript</li>
-              <li>html</li>
-            </ul>
-            <button type="submit" class="card-btn">See Project</button>
-          </div>
-        </div>
-  
-      </div>
+      <div class="cards card-holder"></div>
     </div>
   </section>
   <!-- About section-->
@@ -217,7 +168,8 @@
             I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.
           </h4>
         </div>
-        <form action="https://formspree.io/f/xpzkrabn" method="POST">
+        <form onsubmit="return validate(e)" action="https://formspree.io/f/xpzkrabn" method="POST" id="form">
+          <span class="error">Wrong email format. Lowercase expected</span>
           <div class="name-input-wrapper">
             <label for="firstname">First Name</label>
             <input type="text" id="firstname" name="firstname" maxlength="30" required placeholder="Fisrt name">
@@ -277,6 +229,6 @@
 </footer>
   <!-- Scripts -->
   <script src="https://kit.fontawesome.com/7ebaa9994f.js" crossorigin="anonymous"></script>
-  <script src="./dist/js/script.js"></script>
+  <script type="module" src="./dist/js/main.js"></script>
 </body>
 </html>

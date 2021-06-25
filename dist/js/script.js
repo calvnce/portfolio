@@ -1,89 +1,82 @@
 /**
- * Project: Personal Portfolio
- * Date: 12 - 06 -2021
- * Copyright (c) 2021 Calvince
+ * Thid file handles the dynamic logics of the application
  */
 
-(function () {
-  // Utility functions
+import data from './datasource.js';
+import { classItem, isLower, id } from './utils.js';
 
-  // /**
-  //  * @param {string} idValue - an element ID
-  //  * @returns {Object} DOM object associated with id
-  //  * */
-  // function id(idName) {
-  //   return document.getElementById(idName);
-  // }
+const cardHolder = classItem('.card-holder');
 
-  /**
-   * @param {string} className - a classs name of the html elements
-   * @returns {Object} Dom object(s) of the associated html elements
-   */
-  function classItem(className) {
-    return document.querySelector(className);
-  }
+/* This function creates the cards for holding the
+*project cardDetails
+*/
+function createCards() {
+  data.forEach((e) => {
+    // Create card
+    const card = document.createElement('div');
+    card.className = ('card');
+    cardHolder.appendChild(card);
 
-  /**
-   * @param {string} className - a classs name of the html elements
-   * @returns {Object} Dom objects of the associated html elements
-   */
-  function classItems(className) {
-    return document.querySelectorAll(className);
-  }
+    // Add card image
+    const cardImage = document.createElement('div');
+    cardImage.className = ('card-image');
+    const img = document.createElement('img');
+    img.src = e.image;
+    img.alt = 'Snapshoot';
+    cardImage.appendChild(img);
+    card.appendChild(cardImage);
 
-  // Variables
-  let isOpen = false;
-  const main = classItem('.main');
-  const menu = classItem('.mobile-menu-button');
-  const menuItem = classItem('.mobile-menu-button-item');
-  const nav = classItem('.desktop-menu');
-  const logo = classItem('.logo');
-  const links = classItems('.desktop-menu-item');
-  const closeButton = classItem('.desktop-mobile-menu-item');
+    /* Card Details */
+    // Add card Title
+    const cardDetails = document.createElement('div');
+    cardDetails.className = ('card-details');
+    const title = document.createElement('h3');
+    const text = document.createTextNode(e.name);
+    title.appendChild(text);
+    cardDetails.appendChild(title);
 
-  /* Toggle the navigation */
-  function menuToggle() {
-    if (!isOpen) {
-      menuItem.classList.add('open');
-      nav.classList.add('open');
-
-      // Hide logo text
-      logo.style.display = ('none');
-      main.style.backgroundColor = ('#e5e5e5;');
-      isOpen = true;
-    } else {
-      menuItem.classList.remove('open');
-      nav.classList.remove('open');
-
-      // Show logo text
-      logo.style.display = ('inline-block');
-      main.style.backgroundColor = ('#fff;');
-      isOpen = false;
-    }
-  }
-
-  function resetMenu() {
-    links.forEach((element) => {
-      // Hide logo text
-      element.addEventListener('click', () => {
-        if (element.classList.contains('active')) {
-          element.classList.remove('active');
-        } else {
-          element.classList.add('active');
-        }
-        menuItem.classList.remove('open');
-        nav.classList.remove('open');
-        logo.style.display = ('inline-block');
-      });
+    // Add stack
+    const ul = document.createElement('ul');
+    cardDetails.appendChild(ul);
+    e.stack.forEach((val) => {
+      const item = document.createElement('li');
+      const itemText = document.createTextNode(val);
+      item.appendChild(itemText);
+      ul.appendChild(item);
     });
-  }
+    cardDetails.appendChild(ul);
 
-  /* Initializing the events */
-  function init() {
-    menu.addEventListener('click', menuToggle);
-    closeButton.addEventListener('click', menuToggle);
-    resetMenu();
+    // Add card button
+    const button = document.createElement('button');
+    button.className = ('card-btn');
+    const buttonText = document.createTextNode('See Project');
+    button.appendChild(buttonText);
+    cardDetails.appendChild(button);
+
+    card.appendChild(cardDetails);
+  });
+}
+
+/* This function perfoms form validation */
+function validate(e) {
+  const email = id('email').value;
+  const error = classItem('.error');
+
+  if (!isLower(email)) {
+    e.preventDefault();
+    error.style.display = ('flex');
+  } else {
+    error.style.display = ('none');
+    return true;
   }
-  // Windows events
-  window.addEventListener('load', init, true);
-}());
+  return false;
+}
+
+/**
+ * Activates the form button when clicked
+ */
+function validateOnClick() {
+  id('contactButton').addEventListener('click', validate);
+}
+
+export { createCards, validateOnClick };
