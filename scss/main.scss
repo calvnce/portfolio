@@ -547,6 +547,19 @@ main {
     }
   }
 
+  .error {
+    width: 97%;
+    height: 30px;
+    background-color: lighten($color: $error-color, $amount: 40%);
+    color: $error-color;
+    border-radius: 2px;
+    font-size: 12px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
   .name-input-wrapper > input {
     width: 49%;
   }
