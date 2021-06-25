@@ -1,8 +1,9 @@
 /*
  * This file handles the dynamic logics of the menu
 */
+
 import { classItem, classItems } from './utils.js';
-// Variables
+
 let isOpen = false;
 const main = classItem('.main');
 const menu = classItem('.mobile-menu-button');
