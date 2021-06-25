@@ -374,6 +374,7 @@ main {
 
     img {
       width: inherit;
+      height: 100%;
     }
   }
 
@@ -382,7 +383,6 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     background-color: lighten($color: $secondary-color, $amount: 100%);
-    border-radius: 8px;
 
     @include flex-items;
 
@@ -491,7 +491,7 @@ main {
 .contact {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 202px;
+  grid-template-rows: 102px;
   align-items: center;
   justify-items: stretch;
   column-gap: 20px;
@@ -596,6 +596,8 @@ main {
 label {
   display: none;
 }
+
+/* Card modal */
 
 .contact-cover-right {
   width: inherit;

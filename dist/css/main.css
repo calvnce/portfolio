@@ -429,6 +429,7 @@ main {
 
 .card-image img {
   width: inherit;
+  height: 100%;
 }
 
 .card-details {
@@ -441,7 +442,6 @@ main {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   background-color: white;
-  border-radius: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -575,8 +575,8 @@ main {
   display: grid;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
-  -ms-grid-rows: 202px;
-      grid-template-rows: 202px;
+  -ms-grid-rows: 102px;
+      grid-template-rows: 102px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -691,6 +691,7 @@ label {
   display: none;
 }
 
+/*Card modal*/
 .contact-cover-right {
   width: inherit;
   background-image: url("../img/contact-form-illustratoin-3-desktop.png");
@@ -894,12 +895,12 @@ footer {
     margin-top: 50px;
   }
   .contact {
-    margin-top: 108px;
+    margin-top: 8px;
   }
   .card {
     width: 560px;
-    -ms-grid-rows: 302px 352px;
-        grid-template-rows: 302px 352px;
+    -ms-grid-rows: 302px 282px;
+        grid-template-rows: 302px 282px;
   }
   .card-details > ul > li {
     padding: 6px 26px;
