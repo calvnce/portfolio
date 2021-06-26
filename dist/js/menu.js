@@ -2,16 +2,14 @@
  * This file handles the dynamic logics of the menu
 */
 
-import { classItem, classItems } from './utils.js';
-
 let isOpen = false;
-const main = classItem('.main');
-const menu = classItem('.mobile-menu-button');
-const menuItem = classItem('.mobile-menu-button-item');
-const nav = classItem('.desktop-menu');
-const logo = classItem('.logo');
-const links = classItems('.desktop-menu-item');
-const closeButton = classItem('.desktop-mobile-menu-item');
+const main = document.querySelector('.main');
+const menu = document.querySelector('.mobile-menu-button');
+const menuItem = document.querySelector('.mobile-menu-button-item');
+const nav = document.querySelector('.desktop-menu');
+const logo = document.querySelector('.logo');
+const links = document.querySelectorAll('.desktop-menu-item');
+const closeButton = document.querySelector('.desktop-mobile-menu-item');
 
 /* Toggle the navigation */
 function menuToggle() {
@@ -50,10 +48,11 @@ function resetMenu() {
   });
 }
 
-function initMenu() {
+function menuControl() {
   menu.addEventListener('click', menuToggle);
   closeButton.addEventListener('click', menuToggle);
   resetMenu();
 }
 
-export default initMenu;
+// eslint-disable-next-line import/prefer-default-export
+export { menuControl };
