@@ -73,6 +73,12 @@ function createModal() {
   const modalContainer = document.querySelector('.modal-container');
   const content = document.querySelectorAll('.content');
 
+  // Clear initially created nodes
+
+  while (modalContainer.hasChildNodes()) {
+    modalContainer.removeChild(modalContainer.lastChild);
+  }
+
   data.forEach((e) => {
     if (Number(id) === Number(e.id)) {
       content.forEach((c) => {

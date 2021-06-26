@@ -8,7 +8,7 @@ const menu = document.querySelector('.mobile-menu-button');
 const menuItem = document.querySelector('.mobile-menu-button-item');
 const nav = document.querySelector('.desktop-menu');
 const logo = document.querySelector('.logo');
-const links = document.querySelector('.desktop-menu-item');
+const links = document.querySelectorAll('.desktop-menu-item');
 const closeButton = document.querySelector('.desktop-mobile-menu-item');
 
 /* Toggle the navigation */

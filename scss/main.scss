@@ -604,11 +604,11 @@ label {
 
 /* Card modal */
 .blur {
-  filter: blur(45px);
+  filter: blur(55px);
 }
 
 .modal-container {
-  background-color: $alternative-color;
+  background-color: $secondary-color;
   padding: 25px 0;
   margin: auto;
   position: fixed;
