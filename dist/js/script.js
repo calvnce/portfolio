@@ -71,11 +71,18 @@ function createCards() {
 function createModal() {
   const { id } = this;
   const modalContainer = document.querySelector('.modal-container');
+  const content = document.querySelectorAll('.content');
 
   data.forEach((e) => {
     if (Number(id) === Number(e.id)) {
+      content.forEach((c) => {
+        c.classList.add('blur');
+      });
+      modalContainer.style.visibility = ('visible');
+
       const card = document.createElement('div');
       card.className = ('card-modal');
+
       // Create close button
       const closeButton = document.createElement('span');
       closeButton.className = ('close');
@@ -84,6 +91,12 @@ function createModal() {
       times.classList.add('fa-times');
       closeButton.appendChild(times);
       card.appendChild(closeButton);
+      closeButton.addEventListener('click', () => {
+        content.forEach((c) => {
+          c.classList.remove('blur');
+        });
+        modalContainer.style.visibility = ('hidden');
+      });
 
       // card image
       const imageContainer = document.createElement('div');
@@ -157,6 +170,7 @@ function createModal() {
 }
 
 window.addEventListener('load', createCards, true);
+
 /**
  * Activate the button click event to create the popups
  */

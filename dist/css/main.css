@@ -50,6 +50,7 @@ a.active {
 main {
   width: 100vw;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .headline-bg-cover {
@@ -692,6 +693,11 @@ label {
 }
 
 /* Card modal */
+.blur {
+  -webkit-filter: blur(45px);
+          filter: blur(45px);
+}
+
 .modal-container {
   background-color: #67798e;
   padding: 25px 0;
@@ -706,6 +712,7 @@ label {
   z-index: 1;
   opacity: 0.96;
   overflow: hidden;
+  visibility: hidden;
 }
 
 .card-modal {
@@ -822,6 +829,7 @@ label {
 
 .card-modal-details-headline .card-details-headline-button {
   width: 40%;
+  margin: 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -829,7 +837,6 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 10px;
 }
 
 .card-modal-details-headline .card-details-headline-button button {
@@ -861,6 +868,10 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   width: 100%;
   padding: 20px 0;
   display: -webkit-box;
@@ -871,7 +882,7 @@ label {
 }
 
 .card-modal-details ul li {
-  margin-right: 10px;
+  margin: 5px 10px 0 0;
   background-color: #dfe1e6;
   padding: 6px 10px;
   font-size: 12px;
@@ -957,6 +968,42 @@ footer {
     padding: 6px;
     font-size: 9px;
   }
+  .card-modal {
+    width: 260px;
+    height: 630px;
+    border-radius: 8px;
+  }
+  .card-modal .close {
+    z-index: 1;
+    position: relative;
+  }
+  .card-modal .close .fas {
+    background-color: inherit;
+    color: #172b4d;
+    margin-right: 8px;
+  }
+  .card-modal-image-container {
+    margin-top: -55px;
+    height: 35%;
+  }
+  .card-modal-details-headline h3 {
+    width: 100%;
+    position: relative;
+    font-size: 22px;
+  }
+  .card-modal-details-headline .card-details-headline-button {
+    position: fixed;
+    top: 610px;
+    width: 230px;
+    left: 13px;
+  }
+  .card-modal-details-headline .card-details-headline-button button {
+    border-radius: 3px;
+  }
+  .card-modal-details p {
+    font-size: 9px;
+    line-height: 11px;
+  }
 }
 
 @media screen and (min-width: 320px) {
@@ -978,6 +1025,16 @@ footer {
   }
   .contact-button {
     margin-left: 6px;
+  }
+  .card-modal {
+    width: 300px;
+  }
+  .card-modal-details-headline .card-details-headline-button {
+    width: 270px;
+  }
+  .card-modal-details p {
+    font-size: 11px;
+    line-height: 14px;
   }
 }
 
@@ -1010,6 +1067,16 @@ footer {
   .card-details > ul > li {
     padding: 6px 10px;
     font-size: 12px;
+  }
+  .card-modal {
+    width: 350px;
+  }
+  .card-modal-details-headline .card-details-headline-button {
+    width: 320px;
+  }
+  .card-modal-details p {
+    font-size: 11px;
+    line-height: 20px;
   }
 }
 
@@ -1053,6 +1120,22 @@ footer {
   }
   .contact-button {
     margin-left: 8px;
+  }
+  .card-modal {
+    width: 480px;
+    height: 700px;
+  }
+  .card-modal-image-container {
+    height: 45%;
+  }
+  .card-modal-details-headline .card-details-headline-button {
+    width: 420px;
+    top: 680px;
+    left: 45px;
+  }
+  .card-modal-details p {
+    font-size: 13px;
+    line-height: 21px;
   }
 }
 
@@ -1121,6 +1204,9 @@ footer {
   .contact-button {
     margin-left: 12px;
   }
+  .card-modal-details-headline .card-details-headline-button {
+    left: 155px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -1161,6 +1247,9 @@ footer {
     position: static;
     margin: 0 25px;
     padding: 20px 0;
+  }
+  .card-modal-details-headline .card-details-headline-button {
+    left: 275px;
   }
   footer .social-icons {
     width: 45%;
@@ -1215,6 +1304,36 @@ footer {
   .contact .text > h4 {
     text-align: left;
     margin-left: 15px;
+  }
+  .card-modal {
+    width: 684px;
+    height: 760px;
+    background-color: #fff;
+  }
+  .card-modal .close .fas {
+    color: #67798e;
+    background-color: #dfe1e6;
+  }
+  .card-modal-image-container {
+    height: 50%;
+    margin: 0 auto;
+  }
+  .card-modal-details-headline h3 {
+    font-weight: 800;
+    font-size: 24px;
+    width: 60%;
+    position: initial;
+  }
+  .card-modal-details-headline .card-details-headline-button {
+    width: 40%;
+    position: initial;
+  }
+  .card-modal-details-headline .card-details-headline-button button {
+    border-radius: 8px;
+  }
+  .card-modal-details p {
+    font-size: 14px;
+    line-height: 30px;
   }
   footer .social-icons {
     width: 40%;

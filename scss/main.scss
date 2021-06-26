@@ -42,6 +42,7 @@ a {
 main {
   width: 100vw;
   background-color: get-theme('light');
+  overflow: hidden;
 }
 
 .headline-bg-cover {
@@ -602,6 +603,10 @@ label {
 }
 
 /* Card modal */
+.blur {
+  filter: blur(45px);
+}
+
 .modal-container {
   background-color: $alternative-color;
   padding: 25px 0;
@@ -616,7 +621,9 @@ label {
   z-index: 1;
   opacity: 0.96;
   overflow: hidden;
+  visibility: hidden;
 }
+
 .card-modal {
   width: 684px;
   height: 760px;
@@ -642,24 +649,25 @@ label {
       border-radius: 8px;
       background-color: $secondary-color;
       justify-content: center;
+
       @include flex-items;
 
       &:hover {
-      cursor: pointer;
-      color: $error-color;
+        cursor: pointer;
+        color: $error-color;
       }
     }
-
   }
+
   .close,
   &-image-container,
-  &-details{
+  &-details {
     width: 95%;
     margin: 0 auto;
   }
 
   &-image-container {
-    height: 50%;  
+    height: 50%;
 
     img {
       width: 100%;
@@ -690,8 +698,9 @@ label {
 
       .card-details-headline-button {
         width: 40%;
-        @include flex-items;
         margin: 0 10px;
+
+        @include flex-items;
 
         button {
           height: 35px;
@@ -704,6 +713,7 @@ label {
             font-size: 14px;
             font-family: get-font-family('vol');
             font-weight: get-font-weight('bold');
+
             i {
               margin-left: 8px;
             }
@@ -719,13 +729,14 @@ label {
     ul {
       justify-content: flex-start;
       align-items: center;
+      flex-flow: row wrap;
       width: 100%;
       padding: 20px 0;
 
       @include flex-items;
 
       li {
-        margin-right: 10px;
+        margin: 5px 10px 0 0;
         background-color: $secondary-color;
         padding: 6px 10px;
         font-size: 12px;
@@ -733,7 +744,7 @@ label {
       }
     }
 
-    p{
+    p {
       text-align: left;
       font-size: 14px;
       line-height: 30px;
