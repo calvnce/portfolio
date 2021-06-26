@@ -50,10 +50,11 @@ function resetMenu() {
   });
 }
 
-function initMenu() {
+function menuControl() {
   menu.addEventListener('click', menuToggle);
   closeButton.addEventListener('click', menuToggle);
   resetMenu();
 }
 
-export default initMenu;
+// eslint-disable-next-line import/prefer-default-export
+export { menuControl };

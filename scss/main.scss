@@ -41,7 +41,7 @@ a {
 
 main {
   width: 100vw;
-  background-color: lighten($color: $secondary-color, $amount: 100%);
+  background-color: get-theme('light');
 }
 
 .headline-bg-cover {
@@ -155,7 +155,7 @@ main {
 
 .desktop-menu {
   display: none;
-  background-color: lightness($color: $secondary-color);
+  background-color: get-theme('light');
   cursor: pointer;
 
   @include tranisition-all;
@@ -166,7 +166,7 @@ main {
     margin: auto;
 
     &:hover {
-      background-color: lighten($color: $secondary-color, $amount: 100%);
+      background-color: get-theme('light');
       color: $primary-color;
       font-weight: get-font-weight('bold');
       font-family: #{get-font-family('inter')};
@@ -260,7 +260,7 @@ main {
     height: 40px;
     margin: 0 auto;
     justify-content: center;
-    background: lighten($color: $secondary-color, $amount: 100%);
+    background: get-theme('light');
     border: 1px solid $secondary-color;
     border-radius: 32px;
     transition: 0.3s;
@@ -382,7 +382,7 @@ main {
     width: 100%;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: lighten($color: $secondary-color, $amount: 100%);
+    background-color: get-theme('light');
 
     @include flex-items;
 
@@ -411,7 +411,7 @@ main {
   }
 }
 
-.card-btn {
+%button {
   width: 150px;
   height: 40px;
   margin: 5px auto;
@@ -423,10 +423,14 @@ main {
   background: darken($color: $primary-color, $amount: 1%);
   border-radius: 5px;
   font-family: #{get-font-family('vol')};
-  color: lighten($color: $secondary-color, $amount: 100%);
+  color: get-theme('light');
+}
+
+.card-btn {
+  @extend %button;
 
   &:hover {
-    background-color: lighten($color: $secondary-color, $amount: 100%);
+    background-color: get-theme('light');
     color: $primary-color;
     border-bottom: 2px solid $primary-color;
     cursor: pointer;
@@ -466,7 +470,7 @@ main {
 
       li {
         float: none;
-        background-color: lighten($color: $secondary-color, $amount: 100%);
+        background-color: get-theme('light');
         color: $primary-color;
         padding: 8px 16px;
         font-size: 12px;
@@ -532,7 +536,7 @@ main {
       width: 150px;
       height: 26px;
       background: $primary-color;
-      color: lighten($color: $secondary-color, $amount: 100%);
+      color: get-theme('light');
       font-family: #{get-font-family('poppins')};
 
       &:hover {
@@ -598,6 +602,145 @@ label {
 }
 
 /* Card modal */
+.modal-container {
+  background-color: $alternative-color;
+  padding: 25px 0;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  opacity: 0.96;
+  overflow: hidden;
+}
+.card-modal {
+  width: 684px;
+  height: 760px;
+  margin: auto;
+  background-color: get-theme('light');
+  flex-direction: column;
+  padding: 20px 0;
+
+  @include flex-items;
+
+  .close {
+    justify-content: flex-end;
+    font-weight: get-font-weight('bold');
+    margin: 10px auto;
+    padding-bottom: 15px;
+
+    @include flex-items;
+
+    .fas {
+      color: $alternative-color;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background-color: $secondary-color;
+      justify-content: center;
+      @include flex-items;
+
+      &:hover {
+      cursor: pointer;
+      color: $error-color;
+      }
+    }
+
+  }
+  .close,
+  &-image-container,
+  &-details{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  &-image-container {
+    height: 50%;  
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-details {
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column wrap;
+    font-weight: get-font-weight('regular');
+
+    @include flex-items;
+
+    &-headline {
+      width: 100%;
+      justify-content: inherit;
+
+      @include flex-items;
+
+      h3 {
+        font-weight: get-font-weight('bold');
+        font-size: 24px;
+        width: 60%;
+        text-align: left;
+      }
+
+      .card-details-headline-button {
+        width: 40%;
+        @include flex-items;
+        margin: 0 10px;
+
+        button {
+          height: 35px;
+          width: 50%;
+          background-color: $primary-color;
+          border-radius: 8px;
+
+          a {
+            color: get-theme('light');
+            font-size: 14px;
+            font-family: get-font-family('vol');
+            font-weight: get-font-weight('bold');
+            i {
+              margin-left: 8px;
+            }
+          }
+        }
+
+        button:nth-child(1) {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    ul {
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      padding: 20px 0;
+
+      @include flex-items;
+
+      li {
+        margin-right: 10px;
+        background-color: $secondary-color;
+        padding: 6px 10px;
+        font-size: 12px;
+        border-radius: 4px;
+      }
+    }
+
+    p{
+      text-align: left;
+      font-size: 14px;
+      line-height: 30px;
+      font-weight: get-font-weight('regular');
+    }
+  }
+}
 
 .contact-cover-right {
   width: inherit;

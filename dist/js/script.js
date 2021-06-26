@@ -3,16 +3,18 @@
  */
 
 import data from './datasource.js';
-import {
-  classItem, isLower, id,
-} from './utils.js';
+import { isLower } from './utils.js';
+import { menuControl } from './menu.js';
 
-const cardHolder = classItem('.card-holder');
-
+/** *********************************************
+ * Dynamic DOM elements including modals
+ ********************************************* */
 /* This function creates the cards for holding the
 *project cardDetails
 */
 function createCards() {
+  const cardHolder = document.querySelector('.card-holder');
+
   data.forEach((e) => {
     // Create card
     const card = document.createElement('div');
@@ -49,16 +51,11 @@ function createCards() {
     cardDetails.appendChild(ul);
 
     // Add card button
-    const input = document.createElement('input');
-    input.type = ('hidden');
-    input.value = (e.id);
-    input.className = ('hidden');
-    cardDetails.appendChild(input);
-
     const button = document.createElement('button');
     button.className = ('card-btn');
-    button.classList.add('t');
-    button.id = ('button_'.concat(e.id));
+    button.classList.add('card-button');
+    button.id = (e.id);
+    button.onclick = 'a(this)';
     const buttonText = document.createTextNode('See Project');
     button.appendChild(buttonText);
     cardDetails.appendChild(button);
@@ -72,23 +69,25 @@ function createCards() {
  * @returns {none} - no return value
  */
 function createModal() {
-  const pId = classItem('.hidden').value;
-
-  const card = classItem('.modal-container');
-  card.className = ('card-modal');
+  const { id } = this;
+  const modalContainer = document.querySelector('.modal-container');
 
   data.forEach((e) => {
-    if (Number(pId) === e.id) {
+    if (Number(id) === Number(e.id)) {
+      const card = document.createElement('div');
+      card.className = ('card-modal');
       // Create close button
       const closeButton = document.createElement('span');
       closeButton.className = ('close');
-      closeButton.innerHTML = ('&times;');
-      closeButton.style.display = ('flex');
+      const times = document.createElement('i');
+      times.className = ('fas');
+      times.classList.add('fa-times');
+      closeButton.appendChild(times);
       card.appendChild(closeButton);
 
       // card image
       const imageContainer = document.createElement('div');
-      imageContainer.className = ('card-image-container');
+      imageContainer.className = ('card-modal-image-container');
       const img = document.createElement('img');
       img.src = e.image;
       img.alt = 'Snapshoot';
@@ -152,17 +151,31 @@ function createModal() {
       cardDetails.appendChild(desc);
 
       card.appendChild(cardDetails);
+      modalContainer.appendChild(card);
     }
   });
 }
-createModal();
-/** This function perfoms form validation
-*  @param { e } - an event from the form submission events
-*  @returns { none } - no return value
-*/
+
+window.addEventListener('load', createCards, true);
+/**
+ * Activate the button click event to create the popups
+ */
+function modal() {
+  const buttons = document.querySelectorAll('.card-button');
+  buttons.forEach((button) => {
+    button.addEventListener('click', createModal, true);
+  });
+}
+
+window.addEventListener('load', modal, true);
+
+/** *********************************************
+ * Form Validation
+ ********************************************* */
+/* This function perfoms form validation */
 function validate(e) {
-  const email = id('email').value;
-  const error = classItem('.error');
+  const email = document.getElementById('email').value;
+  const error = document.querySelector('.error');
 
   if (!isLower(email)) {
     e.preventDefault();
@@ -173,6 +186,11 @@ function validate(e) {
   }
   return false;
 }
+
+/**
+ * Activates the form button when clicked
+ */
+document.getElementById('contactButton').addEventListener('click', validate, true);
 
 /** *********************************************
  * Local storage
@@ -204,28 +222,12 @@ function retrieve() {
 }
 
 /**
- * Activates the form button when clicked
- */
-function validateOnClick() {
-  id('contactButton').addEventListener('click', validate, true);
-}
-
-/**
  * This function activates the clicking of the button
  */
-function saveOnChange() {
-  inputs.forEach((e) => {
-    e.addEventListener('change', save, true);
-  });
-}
+inputs.forEach((e) => {
+  e.addEventListener('change', save, true);
+});
 
-// /**
-//  * This function activates the clicking of the button
-//  */
-// function fetchOnLoad() {
-//   window.addEventListener('load', , true);
-// }
+window.addEventListener('load', retrieve, true);
 
-export {
-  createCards, validateOnClick, saveOnChange, retrieve,
-};
+menuControl();
