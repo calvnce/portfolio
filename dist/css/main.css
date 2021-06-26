@@ -1347,6 +1347,7 @@ footer {
   .card-modal-details-headline .card-details-headline-button {
     width: 40%;
     position: initial;
+    margin-top: -25px;
   }
   .card-modal-details-headline .card-details-headline-button button {
     border-radius: 8px;
